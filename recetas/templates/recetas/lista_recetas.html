@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Recetas</title>
+</head>
+<body>
+    <h1>Recetas</h1>
+    <form method="GET">
+        <input type="text" name="buscar" placeholder="Buscar ingredientes o instrucciones">
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <a href="{% url 'agregar_receta' %}">Agregar Nueva Receta</a>
+
+    <ul>
+        {% for receta in recetas %}
+            <li>
+                <h2>{{ receta.nombre }}</h2>
+                <p><strong>Ingredientes:</strong> {{ receta.ingredientes }}</p>
+                <p><strong>Instrucciones:</strong> {{ receta.instrucciones }}</p>
+                <a href="{% url 'eliminar_receta' receta.id %}">Eliminar</a>
+
+
+
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

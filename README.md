@@ -32,6 +32,9 @@ Esta es una aplicación simple de gestión de recetas escrita en Django. Permite
    ```bash
    pip install django
    ```
+   y los requerimientos del archivo `requirements.txt`.
+   pip install -r requirements.txt
+   
 5. Realiza las migraciones de la base de datos:
    ```bash
    python manage.py migrate
